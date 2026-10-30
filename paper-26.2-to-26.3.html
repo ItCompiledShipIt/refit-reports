@@ -1,0 +1,1200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper 26.2 → 26.3 API diff</title>
+<style>
+:root{color-scheme:light dark;--bg:#fbfbf8;--fg:#17201b;--muted:#5d6b62;--line:#d9ded7;--accent:#1f6f4a;--warn:#8a4b00}
+@media (prefers-color-scheme:dark){:root{--bg:#111713;--fg:#e8eee9;--muted:#9aaba0;--line:#2b3730;--accent:#6fd3a1;--warn:#e2a35c}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:960px;margin:0 auto;padding:2rem 1.25rem 4rem}
+nav a{color:var(--accent);text-decoration:none}
+h1{font-size:1.9rem;line-height:1.15;margin:.4rem 0 .3rem;letter-spacing:-.02em}
+h2{font-size:1.2rem;margin:2.2rem 0 .6rem;border-bottom:1px solid var(--line);padding-bottom:.3rem}
+.lede{color:var(--muted);margin-top:0}
+.summary{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;padding:0;list-style:none;margin:1.2rem 0}
+.summary li{background:color-mix(in srgb,var(--fg) 5%,transparent);border:1px solid var(--line);border-radius:.4rem;padding:.35rem .65rem}
+.summary strong{font-variant-numeric:tabular-nums}
+table{width:100%;border-collapse:collapse;margin:.5rem 0 1rem;font-size:.94rem}
+th,td{text-align:left;vertical-align:top;padding:.35rem .5rem;border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-weight:600}
+tr.owner th{background:color-mix(in srgb,var(--fg) 4%,transparent);padding-top:.7rem}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em}
+.empty{border-left:3px solid var(--accent);padding:.2rem .8rem;color:var(--muted)}
+.warn{border-left:3px solid var(--warn);padding:.2rem .8rem;color:var(--muted)}
+details{margin-top:.6rem}
+summary{cursor:pointer;color:var(--accent)}
+footer{margin-top:3rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);padding-top:1rem}
+</style>
+</head>
+<body>
+<main>
+<nav><a href="index.html">All releases</a></nav>
+<h1>Paper 26.2 → 26.3 API diff</h1>
+<p class="lede">Binary diff of the public and protected surface of <code>paper-api-26.2.build.135-stable.jar</code> → <code>paper-api-26.3.build.231-stable.jar</code>.</p>
+<ul class="summary">
+<li><strong>1</strong> removed class</li>
+<li><strong>5</strong> removed methods</li>
+<li><strong>4</strong> removed fields</li>
+<li><strong>0</strong> same-signature renames</li>
+<li><strong>0</strong> signature changes</li>
+<li><strong>1125</strong> flagged for future removal</li>
+</ul>
+<p class="lede">Java floor 25 → 25.</p>
+<h2>Removed or changed API</h2>
+<table><thead><tr><th>kind</th><th>member</th></tr></thead><tbody>
+<tr class="owner"><th colspan="2"><code>org.bukkit.Tag</code></th></tr>
+<tr><td>removed-field</td><td><code>ITEMS_BREWING_FUEL:org.bukkit.Tag</code></td></tr>
+<tr><td>removed-field</td><td><code>NETHER_CARVER_REPLACEABLES:org.bukkit.Tag</code></td></tr>
+<tr><td>removed-field</td><td><code>OVERWORLD_CARVER_REPLACEABLES:org.bukkit.Tag</code></td></tr>
+<tr class="owner"><th colspan="2"><code>org.bukkit.block.data.type.PinkPetals</code></th></tr>
+<tr><td>removed-class</td><td><code>org.bukkit.block.data.type.PinkPetals</code></td></tr>
+<tr class="owner"><th colspan="2"><code>org.bukkit.entity.memory.MemoryKey</code></th></tr>
+<tr><td>removed-field</td><td><code>IS_TEMPTED:org.bukkit.entity.memory.MemoryKey</code></td></tr>
+<tr class="owner"><th colspan="2"><code>org.bukkit.event.player.AsyncPlayerPreLoginEvent</code></th></tr>
+<tr><td>removed-method</td><td><code>&lt;init&gt;(java.lang.String, java.net.InetAddress, java.net.InetAddress, java.util.UUID, boolean, com.destroystokyo.paper.profile.PlayerProfile, java.lang.String, io.papermc.paper.connection.PlayerLoginConnection)</code></td></tr>
+<tr class="owner"><th colspan="2"><code>org.bukkit.event.server.ServerListPingEvent</code></th></tr>
+<tr><td>removed-method</td><td><code>&lt;init&gt;(java.lang.String, java.net.InetAddress, java.lang.String, int)</code></td></tr>
+<tr><td>removed-method</td><td><code>&lt;init&gt;(java.lang.String, java.net.InetAddress, java.lang.String, int, int)</code></td></tr>
+<tr><td>removed-method</td><td><code>&lt;init&gt;(java.lang.String, java.net.InetAddress, net.kyori.adventure.text.Component, int)</code></td></tr>
+<tr><td>removed-method</td><td><code>&lt;init&gt;(java.lang.String, java.net.InetAddress, net.kyori.adventure.text.Component, int, int)</code></td></tr>
+</tbody></table>
+<h2>Renamed members</h2>
+<p class="empty">No same-signature renames in this release: no drop-in replacements were detected, so nothing here can be carried by a mechanical rename recipe.</p>
+<h2>Scheduled for removal</h2>
+<p class="warn">1125 APIs are already flagged for removal in a future release. These still work on 26.3; they are what breaks next.</p>
+<details><summary>Show all 1125</summary>
+<table><thead><tr><th>owner</th><th>member</th></tr></thead><tbody>
+<tr><td><code>org.bukkit.Art</code></td><td><code>getById(int)</code></td></tr>
+<tr><td><code>org.bukkit.Art</code></td><td><code>getId()</code></td></tr>
+<tr><td><code>org.bukkit.Art</code></td><td><code>getKey()</code></td></tr>
+<tr><td><code>org.bukkit.Art</code></td><td><code>key()</code></td></tr>
+<tr><td><code>org.bukkit.Art</code></td><td><code>valueOf(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.Art</code></td><td><code>values()</code></td></tr>
+<tr><td><code>org.bukkit.Bukkit</code></td><td><code>getPotionBrewer()</code></td></tr>
+<tr><td><code>org.bukkit.Bukkit</code></td><td><code>shouldSendChatPreviews()</code></td></tr>
+<tr><td><code>org.bukkit.Bukkit</code></td><td><code>spigot()</code></td></tr>
+<tr><td><code>org.bukkit.ChunkSnapshot</code></td><td><code>getData(int, int, int)</code></td></tr>
+<tr><td><code>org.bukkit.CoalType</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.CropState</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>BOW_FIRE:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>CLICK1:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>CLICK2:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>DOOR_CLOSE:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>DOOR_TOGGLE:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>DRAGON_BREATH:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>ENDERDRAGON_GROWL:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>ENDERDRAGON_SHOOT:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>ENDEREYE_LAUNCH:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>FENCE_GATE_CLOSE:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>FENCE_GATE_TOGGLE:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>GUST_DUST:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>IRON_DOOR_CLOSE:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>IRON_DOOR_TOGGLE:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>IRON_TRAPDOOR_CLOSE:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>IRON_TRAPDOOR_TOGGLE:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>PARTICLES_AND_SOUND_BRUSH_BLOCK_COMPLETE:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>PARTICLES_EGG_CRACK:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>PARTICLES_SCULK_CHARGE:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>PARTICLES_SCULK_SHRIEK:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>SHOOT_WHITE_SMOKE:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>SMOKE:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>SOUND_STOP_JUKEBOX_SONG:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>SOUND_WITH_CHARGE_SHOT:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>STEP_SOUND:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>TRAPDOOR_CLOSE:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>TRAPDOOR_TOGGLE:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>VILLAGER_PLANT_GROW:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.Effect</code></td><td><code>ZOMBIE_CONVERTED_VILLAGER:org.bukkit.Effect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>BODY_BREAK:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>CAT_TAME_FAIL:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>CAT_TAME_SUCCESS:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>DEATH:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>EGG_BREAK:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>FANG_ATTACK:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>HOGLIN_ATTACK:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>HURT:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>HURT_BERRY_BUSH:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>HURT_DROWN:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>HURT_EXPLOSION:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>IRON_GOLEN_ATTACK:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>PLAYER_BAD_OMEN_RAID:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>RAVAGER_ATTACK:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>SHEEP_EAT:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>SHIELD_BLOCK:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>SHIELD_BREAK:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>SNOWBALL_BREAK:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>THORNS_HURT:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>TOTEM_RESURRECT:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>WARDEN_ATTACK:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>WOLF_HEARTS:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>WOLF_SMOKE:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.EntityEffect</code></td><td><code>ZOGLIN_ATTACK:org.bukkit.EntityEffect</code></td></tr>
+<tr><td><code>org.bukkit.Fluid</code></td><td><code>valueOf(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.Fluid</code></td><td><code>values()</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>getByName(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>getName()</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>values()</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>ALLOW_ENTERING_NETHER_USING_PORTALS:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>ALLOW_FIRE_TICKS_AWAY_FROM_PLAYER:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>ANNOUNCE_ADVANCEMENTS:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>BLOCK_EXPLOSION_DROP_DECAY:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>COMMAND_BLOCKS_ENABLED:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>COMMAND_BLOCK_OUTPUT:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>COMMAND_MODIFICATION_BLOCK_LIMIT:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DISABLE_ELYTRA_MOVEMENT_CHECK:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DISABLE_PLAYER_MOVEMENT_CHECK:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DISABLE_RAIDS:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DO_DAYLIGHT_CYCLE:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DO_ENTITY_DROPS:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DO_FIRE_TICK:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DO_IMMEDIATE_RESPAWN:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DO_INSOMNIA:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DO_LIMITED_CRAFTING:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DO_MOB_LOOT:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DO_MOB_SPAWNING:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DO_PATROL_SPAWNING:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DO_TILE_DROPS:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DO_TRADER_SPAWNING:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DO_VINES_SPREAD:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DO_WARDEN_SPAWNING:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DO_WEATHER_CYCLE:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>DROWNING_DAMAGE:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>ENDER_PEARLS_VANISH_ON_DEATH:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>FALL_DAMAGE:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>FIRE_DAMAGE:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>FORGIVE_DEAD_PLAYERS:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>FREEZE_DAMAGE:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>GLOBAL_SOUND_EVENTS:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>KEEP_INVENTORY:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>LAVA_SOURCE_CONVERSION:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>LOCATOR_BAR:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>LOG_ADMIN_COMMANDS:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>MAX_COMMAND_CHAIN_LENGTH:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>MAX_COMMAND_FORK_COUNT:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>MAX_ENTITY_CRAMMING:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>MINECART_MAX_SPEED:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>MOB_EXPLOSION_DROP_DECAY:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>MOB_GRIEFING:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>NATURAL_REGENERATION:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>PLAYERS_NETHER_PORTAL_CREATIVE_DELAY:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>PLAYERS_NETHER_PORTAL_DEFAULT_DELAY:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>PLAYERS_SLEEPING_PERCENTAGE:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>PROJECTILES_CAN_BREAK_BLOCKS:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>PVP:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>RANDOM_TICK_SPEED:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>REDUCED_DEBUG_INFO:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>SEND_COMMAND_FEEDBACK:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>SHOW_DEATH_MESSAGES:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>SNOW_ACCUMULATION_HEIGHT:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>SPAWNER_BLOCKS_ENABLED:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>SPAWN_MONSTERS:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>SPAWN_RADIUS:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>SPECTATORS_GENERATE_CHUNKS:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>TNT_EXPLODES:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>TNT_EXPLOSION_DROP_DECAY:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>UNIVERSAL_ANGER:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GameRule</code></td><td><code>WATER_SOURCE_CONVERSION:org.bukkit.GameRule</code></td></tr>
+<tr><td><code>org.bukkit.GrassSpecies</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.JukeboxSong</code></td><td><code>getTranslationKey()</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>getCreativeCategory()</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>getItemAttributes(org.bukkit.inventory.EquipmentSlot)</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>getItemRarity()</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>getTranslationKey()</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>isTransparent()</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ACACIA_DOOR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ACACIA_DOOR_ITEM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ACACIA_FENCE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ACACIA_FENCE_GATE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ACACIA_STAIRS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ACTIVATOR_RAIL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_AIR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ANVIL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_APPLE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ARMOR_STAND:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ARROW:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BAKED_POTATO:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BANNER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BARRIER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BEACON:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BED:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BEDROCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BED_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BEETROOT:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BEETROOT_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BEETROOT_SEEDS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BEETROOT_SOUP:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BIRCH_DOOR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BIRCH_DOOR_ITEM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BIRCH_FENCE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BIRCH_FENCE_GATE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BIRCH_WOOD_STAIRS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BLACK_GLAZED_TERRACOTTA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BLACK_SHULKER_BOX:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BLAZE_POWDER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BLAZE_ROD:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BLUE_GLAZED_TERRACOTTA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BLUE_SHULKER_BOX:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BOAT:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BOAT_ACACIA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BOAT_BIRCH:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BOAT_DARK_OAK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BOAT_JUNGLE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BOAT_SPRUCE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BONE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BONE_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BOOK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BOOKSHELF:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BOOK_AND_QUILL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BOWL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BOW:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BREAD:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BREWING_STAND:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BREWING_STAND_ITEM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BRICK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BRICK_STAIRS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BROWN_GLAZED_TERRACOTTA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BROWN_MUSHROOM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BROWN_SHULKER_BOX:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BUCKET:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_BURNING_FURNACE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CACTUS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CAKE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CAKE_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CARPET:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CARROT:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CARROT_ITEM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CARROT_STICK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CAULDRON:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CAULDRON_ITEM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CHAINMAIL_BOOTS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CHAINMAIL_CHESTPLATE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CHAINMAIL_HELMET:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CHAINMAIL_LEGGINGS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CHEST:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CHORUS_FLOWER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CHORUS_FRUIT:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CHORUS_FRUIT_POPPED:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CHORUS_PLANT:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CLAY:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CLAY_BALL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CLAY_BRICK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COAL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COAL_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COAL_ORE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COBBLESTONE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COBBLESTONE_STAIRS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COBBLE_WALL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COCOA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COMMAND:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COMMAND_CHAIN:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COMMAND_MINECART:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COMMAND_REPEATING:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COMPASS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CONCRETE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CONCRETE_POWDER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COOKED_BEEF:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COOKED_CHICKEN:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COOKED_FISH:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COOKED_MUTTON:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COOKED_RABBIT:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_COOKIE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CROPS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CYAN_GLAZED_TERRACOTTA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_CYAN_SHULKER_BOX:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DARK_OAK_DOOR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DARK_OAK_DOOR_ITEM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DARK_OAK_FENCE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DARK_OAK_FENCE_GATE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DARK_OAK_STAIRS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DAYLIGHT_DETECTOR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DAYLIGHT_DETECTOR_INVERTED:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DEAD_BUSH:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DETECTOR_RAIL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DIAMOND:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DIAMOND_AXE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DIAMOND_BARDING:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DIAMOND_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DIAMOND_BOOTS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DIAMOND_CHESTPLATE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DIAMOND_HELMET:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DIAMOND_HOE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DIAMOND_LEGGINGS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DIAMOND_ORE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DIAMOND_PICKAXE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DIAMOND_SPADE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DIAMOND_SWORD:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DIODE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DIODE_BLOCK_OFF:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DIODE_BLOCK_ON:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DIRT:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DISPENSER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DOUBLE_PLANT:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DOUBLE_STEP:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DOUBLE_STONE_SLAB2:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DRAGONS_BREATH:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DRAGON_EGG:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_DROPPER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_EGG:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ELYTRA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_EMERALD:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_EMERALD_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_EMERALD_ORE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_EMPTY_MAP:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ENCHANTED_BOOK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ENCHANTMENT_TABLE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ENDER_CHEST:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ENDER_PEARL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ENDER_PORTAL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ENDER_PORTAL_FRAME:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ENDER_STONE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_END_BRICKS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_END_CRYSTAL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_END_GATEWAY:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_END_ROD:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_EXPLOSIVE_MINECART:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_EXP_BOTTLE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_EYE_OF_ENDER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_FEATHER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_FENCE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_FENCE_GATE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_FERMENTED_SPIDER_EYE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_FIREBALL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_FIRE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_FIREWORK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_FIREWORK_CHARGE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_FISHING_ROD:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_FLINT:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_FLINT_AND_STEEL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_FLOWER_POT:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_FLOWER_POT_ITEM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_FROSTED_ICE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_FURNACE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GHAST_TEAR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GLASS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GLASS_BOTTLE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GLOWING_REDSTONE_ORE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GLOWSTONE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GLOWSTONE_DUST:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLDEN_APPLE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLDEN_CARROT:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLD_AXE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLD_BARDING:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLD_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLD_BOOTS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLD_CHESTPLATE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLD_HELMET:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLD_HOE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLD_INGOT:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLD_LEGGINGS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLD_NUGGET:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLD_ORE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLD_PICKAXE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLD_PLATE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLD_RECORD:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLD_SPADE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GOLD_SWORD:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GRASS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GRASS_PATH:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GRAVEL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GRAY_GLAZED_TERRACOTTA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GRAY_SHULKER_BOX:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GREEN_GLAZED_TERRACOTTA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GREEN_RECORD:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GREEN_SHULKER_BOX:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_GRILLED_PORK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_HARD_CLAY:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_HAY_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_HOPPER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_HOPPER_MINECART:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_HUGE_MUSHROOM_1:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_HUGE_MUSHROOM_2:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ICE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_INK_SACK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_AXE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_BARDING:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_BOOTS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_CHESTPLATE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_DOOR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_DOOR_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_FENCE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_HELMET:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_HOE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_INGOT:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_LEGGINGS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_NUGGET:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_ORE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_PICKAXE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_PLATE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_SPADE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_SWORD:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_IRON_TRAPDOOR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ITEM_FRAME:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_JACK_O_LANTERN:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_JUKEBOX:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_JUNGLE_DOOR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_JUNGLE_DOOR_ITEM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_JUNGLE_FENCE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_JUNGLE_FENCE_GATE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_JUNGLE_WOOD_STAIRS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_KNOWLEDGE_BOOK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LADDER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LAPIS_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LAPIS_ORE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LAVA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LAVA_BUCKET:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LEASH:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LEATHER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LEATHER_BOOTS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LEATHER_CHESTPLATE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LEATHER_HELMET:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LEATHER_LEGGINGS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LEAVES:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LEAVES_2:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LEVER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LIGHT_BLUE_GLAZED_TERRACOTTA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LIGHT_BLUE_SHULKER_BOX:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LIME_GLAZED_TERRACOTTA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LIME_SHULKER_BOX:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LINGERING_POTION:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LOG:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LOG_2:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_LONG_GRASS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MAGENTA_GLAZED_TERRACOTTA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MAGENTA_SHULKER_BOX:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MAGMA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MAGMA_CREAM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MAP:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MELON:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MELON_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MELON_SEEDS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MELON_STEM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MILK_BUCKET:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MINECART:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MOB_SPAWNER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MONSTER_EGG:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MONSTER_EGGS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MOSSY_COBBLESTONE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MUSHROOM_SOUP:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MUTTON:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_MYCEL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_NAME_TAG:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_NETHERRACK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_NETHER_BRICK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_NETHER_BRICK_ITEM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_NETHER_BRICK_STAIRS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_NETHER_FENCE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_NETHER_STALK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_NETHER_STAR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_NETHER_WARTS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_NETHER_WART_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_NOTE_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_OBSERVER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_OBSIDIAN:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ORANGE_GLAZED_TERRACOTTA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ORANGE_SHULKER_BOX:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PACKED_ICE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PAINTING:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PAPER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PINK_GLAZED_TERRACOTTA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PINK_SHULKER_BOX:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PISTON_BASE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PISTON_EXTENSION:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PISTON_MOVING_PIECE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PISTON_STICKY_BASE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_POISONOUS_POTATO:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PORK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PORTAL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_POTATO:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_POTATO_ITEM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_POTION:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_POWERED_MINECART:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_POWERED_RAIL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PREFIX:java.lang.String</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PRISMARINE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PRISMARINE_CRYSTALS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PRISMARINE_SHARD:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PUMPKIN:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PUMPKIN_PIE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PUMPKIN_SEEDS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PUMPKIN_STEM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PURPLE_GLAZED_TERRACOTTA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PURPLE_SHULKER_BOX:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PURPUR_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PURPUR_DOUBLE_SLAB:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PURPUR_PILLAR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PURPUR_SLAB:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_PURPUR_STAIRS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_QUARTZ:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_QUARTZ_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_QUARTZ_ORE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_QUARTZ_STAIRS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RABBIT:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RABBIT_FOOT:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RABBIT_HIDE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RABBIT_STEW:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RAILS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RAW_BEEF:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RAW_CHICKEN:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RAW_FISH:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RECORD_10:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RECORD_11:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RECORD_12:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RECORD_3:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RECORD_4:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RECORD_5:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RECORD_6:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RECORD_7:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RECORD_8:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RECORD_9:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_REDSTONE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_REDSTONE_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_REDSTONE_COMPARATOR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_REDSTONE_COMPARATOR_OFF:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_REDSTONE_COMPARATOR_ON:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_REDSTONE_LAMP_OFF:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_REDSTONE_LAMP_ON:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_REDSTONE_ORE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_REDSTONE_TORCH_OFF:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_REDSTONE_TORCH_ON:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_REDSTONE_WIRE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RED_GLAZED_TERRACOTTA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RED_MUSHROOM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RED_NETHER_BRICK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RED_ROSE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RED_SANDSTONE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RED_SANDSTONE_STAIRS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_RED_SHULKER_BOX:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_ROTTEN_FLESH:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SADDLE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SAND:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SANDSTONE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SANDSTONE_STAIRS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SAPLING:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SEA_LANTERN:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SEEDS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SHEARS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SHIELD:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SHULKER_SHELL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SIGN:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SIGN_POST:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SILVER_GLAZED_TERRACOTTA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SILVER_SHULKER_BOX:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SKULL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SKULL_ITEM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SLIME_BALL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SLIME_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SMOOTH_BRICK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SMOOTH_STAIRS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SNOW:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SNOW_BALL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SNOW_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SOIL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SOUL_SAND:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SPECKLED_MELON:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SPECTRAL_ARROW:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SPIDER_EYE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SPLASH_POTION:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SPONGE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SPRUCE_DOOR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SPRUCE_DOOR_ITEM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SPRUCE_FENCE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SPRUCE_FENCE_GATE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SPRUCE_WOOD_STAIRS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STAINED_CLAY:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STAINED_GLASS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STAINED_GLASS_PANE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STANDING_BANNER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STATIONARY_LAVA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STATIONARY_WATER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STEP:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STICK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STONE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STONE_AXE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STONE_BUTTON:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STONE_HOE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STONE_PICKAXE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STONE_PLATE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STONE_SLAB2:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STONE_SPADE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STONE_SWORD:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STORAGE_MINECART:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STRING:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STRUCTURE_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_STRUCTURE_VOID:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SUGAR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SUGAR_CANE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SUGAR_CANE_BLOCK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_SULPHUR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_THIN_GLASS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_TIPPED_ARROW:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_TNT:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_TORCH:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_TOTEM:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_TRAPPED_CHEST:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_TRAP_DOOR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_TRIPWIRE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_TRIPWIRE_HOOK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_VINE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WALL_BANNER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WALL_SIGN:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WATCH:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WATER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WATER_BUCKET:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WATER_LILY:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WEB:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WHEAT:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WHITE_GLAZED_TERRACOTTA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WHITE_SHULKER_BOX:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WOODEN_DOOR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WOOD:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WOOD_AXE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WOOD_BUTTON:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WOOD_DOOR:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WOOD_DOUBLE_STEP:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WOOD_HOE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WOOD_PICKAXE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WOOD_PLATE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WOOD_SPADE:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WOOD_STAIRS:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WOOD_STEP:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WOOD_SWORD:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WOOL:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WORKBENCH:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_WRITTEN_BOOK:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_YELLOW_FLOWER:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_YELLOW_GLAZED_TERRACOTTA:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.Material</code></td><td><code>LEGACY_YELLOW_SHULKER_BOX:org.bukkit.Material</code></td></tr>
+<tr><td><code>org.bukkit.MusicInstrument</code></td><td><code>getKey()</code></td></tr>
+<tr><td><code>org.bukkit.MusicInstrument</code></td><td><code>key()</code></td></tr>
+<tr><td><code>org.bukkit.MusicInstrument</code></td><td><code>translationKey()</code></td></tr>
+<tr><td><code>org.bukkit.NetherWartsState</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.Raid</code></td><td><code>getId()</code></td></tr>
+<tr><td><code>org.bukkit.Registry</code></td><td><code>match(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.Registry</code></td><td><code>ADVANCEMENT:org.bukkit.Registry</code></td></tr>
+<tr><td><code>org.bukkit.Registry</code></td><td><code>BOSS_BARS:org.bukkit.Registry</code></td></tr>
+<tr><td><code>org.bukkit.Registry$SimpleRegistry</code></td><td><code>getType()</code></td></tr>
+<tr><td><code>org.bukkit.SandstoneType</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.Server</code></td><td><code>getPotionBrewer()</code></td></tr>
+<tr><td><code>org.bukkit.Server</code></td><td><code>shouldSendChatPreviews()</code></td></tr>
+<tr><td><code>org.bukkit.Server</code></td><td><code>spigot()</code></td></tr>
+<tr><td><code>org.bukkit.Server$Spigot</code></td><td><code>getBukkitConfig()</code></td></tr>
+<tr><td><code>org.bukkit.Server$Spigot</code></td><td><code>getConfig()</code></td></tr>
+<tr><td><code>org.bukkit.Server$Spigot</code></td><td><code>getPaperConfig()</code></td></tr>
+<tr><td><code>org.bukkit.Server$Spigot</code></td><td><code>getSpigotConfig()</code></td></tr>
+<tr><td><code>org.bukkit.Server$Spigot</code></td><td><code>restart()</code></td></tr>
+<tr><td><code>org.bukkit.SkullType</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.Sound</code></td><td><code>getKey()</code></td></tr>
+<tr><td><code>org.bukkit.Sound</code></td><td><code>key()</code></td></tr>
+<tr><td><code>org.bukkit.Sound</code></td><td><code>valueOf(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.Sound</code></td><td><code>values()</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>AXOLOTL_TEMPT_ITEMS:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>BAMBOO_PLANTABLE_ON:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>BIG_DRIPLEAF_PLACEABLE:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>CARPETS:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>CONCRETE_POWDER:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>CONVERTABLE_TO_MUD:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>DEAD_BUSH_MAY_PLACE_ON:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>DRIPSTONE_REPLACEABLE:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>DRY_VEGETATION_MAY_PLACE_ON:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>ENTITY_TYPES_DEFLECTS_ARROWS:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>FOX_FOOD:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>ITEMS_FURNACE_MATERIALS:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>ITEMS_NOTE_BLOCK_TOP_INSTRUMENTS:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>ITEMS_TOOLS:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>MUSHROOM_GROW_BLOCK:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>PIGLIN_FOOD:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>PLAYS_AMBIENT_DESERT_BLOCK_SOUNDS:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>SMALL_DRIPLEAF_PLACEABLE:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>SNOW_LAYER_CANNOT_SURVIVE_ON:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Tag</code></td><td><code>SNOW_LAYER_CAN_SURVIVE_ON:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.Translatable</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.TreeSpecies</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.UnsafeValues</code></td><td><code>getInternalPotionData(org.bukkit.NamespacedKey)</code></td></tr>
+<tr><td><code>org.bukkit.UnsafeValues</code></td><td><code>isLegacyPlugin(org.bukkit.plugin.Plugin)</code></td></tr>
+<tr><td><code>org.bukkit.UnsafeValues</code></td><td><code>isSupportedApiVersion(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.Vibration</code></td><td><code>&lt;init&gt;(org.bukkit.Location, org.bukkit.Vibration$Destination, int)</code></td></tr>
+<tr><td><code>org.bukkit.Vibration</code></td><td><code>getOrigin()</code></td></tr>
+<tr><td><code>org.bukkit.World</code></td><td><code>getAllowAnimals()</code></td></tr>
+<tr><td><code>org.bukkit.World</code></td><td><code>getGameRuleValue(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.World</code></td><td><code>getKeepSpawnInMemory()</code></td></tr>
+<tr><td><code>org.bukkit.World</code></td><td><code>regenerateChunk(int, int)</code></td></tr>
+<tr><td><code>org.bukkit.World</code></td><td><code>setGameRuleValue(java.lang.String, java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.World</code></td><td><code>setKeepSpawnInMemory(boolean)</code></td></tr>
+<tr><td><code>org.bukkit.World</code></td><td><code>setSpawnFlags(boolean, boolean)</code></td></tr>
+<tr><td><code>org.bukkit.World</code></td><td><code>spawnFallingBlock(org.bukkit.Location, org.bukkit.Material, byte)</code></td></tr>
+<tr><td><code>org.bukkit.World</code></td><td><code>spawnFallingBlock(org.bukkit.Location, org.bukkit.material.MaterialData)</code></td></tr>
+<tr><td><code>org.bukkit.World$Spigot</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.WorldBorder</code></td><td><code>getWarningTime()</code></td></tr>
+<tr><td><code>org.bukkit.WorldBorder</code></td><td><code>setSize(double, long)</code></td></tr>
+<tr><td><code>org.bukkit.WorldBorder</code></td><td><code>setSize(double, java.util.concurrent.TimeUnit, long)</code></td></tr>
+<tr><td><code>org.bukkit.WorldBorder</code></td><td><code>setWarningTime(int)</code></td></tr>
+<tr><td><code>org.bukkit.WorldCreator</code></td><td><code>keepSpawnLoaded()</code></td></tr>
+<tr><td><code>org.bukkit.WorldCreator</code></td><td><code>keepSpawnLoaded(net.kyori.adventure.util.TriState)</code></td></tr>
+<tr><td><code>org.bukkit.advancement.AdvancementDisplay</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.advancement.AdvancementDisplayType</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.attribute.Attribute</code></td><td><code>valueOf(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.attribute.Attribute</code></td><td><code>values()</code></td></tr>
+<tr><td><code>org.bukkit.attribute.AttributeInstance</code></td><td><code>getModifier(java.util.UUID)</code></td></tr>
+<tr><td><code>org.bukkit.attribute.AttributeInstance</code></td><td><code>removeModifier(java.util.UUID)</code></td></tr>
+<tr><td><code>org.bukkit.attribute.AttributeModifier</code></td><td><code>&lt;init&gt;(java.lang.String, double, org.bukkit.attribute.AttributeModifier$Operation)</code></td></tr>
+<tr><td><code>org.bukkit.attribute.AttributeModifier</code></td><td><code>&lt;init&gt;(java.util.UUID, java.lang.String, double, org.bukkit.attribute.AttributeModifier$Operation)</code></td></tr>
+<tr><td><code>org.bukkit.attribute.AttributeModifier</code></td><td><code>&lt;init&gt;(java.util.UUID, java.lang.String, double, org.bukkit.attribute.AttributeModifier$Operation, org.bukkit.inventory.EquipmentSlot)</code></td></tr>
+<tr><td><code>org.bukkit.attribute.AttributeModifier</code></td><td><code>&lt;init&gt;(java.util.UUID, java.lang.String, double, org.bukkit.attribute.AttributeModifier$Operation, org.bukkit.inventory.EquipmentSlotGroup)</code></td></tr>
+<tr><td><code>org.bukkit.attribute.AttributeModifier</code></td><td><code>getUniqueId()</code></td></tr>
+<tr><td><code>org.bukkit.block.Bed</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.block.Biome</code></td><td><code>valueOf(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.block.Biome</code></td><td><code>values()</code></td></tr>
+<tr><td><code>org.bukkit.block.Biome</code></td><td><code>CUSTOM:org.bukkit.block.Biome</code></td></tr>
+<tr><td><code>org.bukkit.block.Block</code></td><td><code>getData()</code></td></tr>
+<tr><td><code>org.bukkit.block.Block</code></td><td><code>getSoundGroup()</code></td></tr>
+<tr><td><code>org.bukkit.block.Block</code></td><td><code>getTranslationKey()</code></td></tr>
+<tr><td><code>org.bukkit.block.Block</code></td><td><code>isValidTool(org.bukkit.inventory.ItemStack)</code></td></tr>
+<tr><td><code>org.bukkit.block.BlockState</code></td><td><code>getData()</code></td></tr>
+<tr><td><code>org.bukkit.block.BlockState</code></td><td><code>getRawData()</code></td></tr>
+<tr><td><code>org.bukkit.block.BlockState</code></td><td><code>setData(org.bukkit.material.MaterialData)</code></td></tr>
+<tr><td><code>org.bukkit.block.BlockState</code></td><td><code>setRawData(byte)</code></td></tr>
+<tr><td><code>org.bukkit.block.BlockType</code></td><td><code>getTranslationKey()</code></td></tr>
+<tr><td><code>org.bukkit.block.BlockType</code></td><td><code>isEnabledByFeature(org.bukkit.World)</code></td></tr>
+<tr><td><code>org.bukkit.block.Skull</code></td><td><code>getSkullType()</code></td></tr>
+<tr><td><code>org.bukkit.block.Skull</code></td><td><code>setSkullType(org.bukkit.SkullType)</code></td></tr>
+<tr><td><code>org.bukkit.block.SuspiciousSand</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.block.banner.PatternType</code></td><td><code>getByIdentifier(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.block.banner.PatternType</code></td><td><code>getIdentifier()</code></td></tr>
+<tr><td><code>org.bukkit.block.banner.PatternType</code></td><td><code>getKey()</code></td></tr>
+<tr><td><code>org.bukkit.block.banner.PatternType</code></td><td><code>key()</code></td></tr>
+<tr><td><code>org.bukkit.block.banner.PatternType</code></td><td><code>valueOf(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.block.banner.PatternType</code></td><td><code>values()</code></td></tr>
+<tr><td><code>org.bukkit.block.data.type.Crafter$Orientation</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.block.data.type.CreakingHeart</code></td><td><code>isActive()</code></td></tr>
+<tr><td><code>org.bukkit.block.data.type.CreakingHeart</code></td><td><code>setActive(boolean)</code></td></tr>
+<tr><td><code>org.bukkit.block.data.type.Jigsaw$Orientation</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.block.data.type.MossyCarpet$Height</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.block.data.type.PointedDripstone</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.block.data.type.Vault</code></td><td><code>getTrialSpawnerState()</code></td></tr>
+<tr><td><code>org.bukkit.block.data.type.Vault</code></td><td><code>setTrialSpawnerState(org.bukkit.block.data.type.Vault$State)</code></td></tr>
+<tr><td><code>org.bukkit.command.BufferedCommandSender</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.command.Command</code></td><td><code>getTimingName()</code></td></tr>
+<tr><td><code>org.bukkit.command.Command</code></td><td><code>timings:co.aikar.timings.Timing</code></td></tr>
+<tr><td><code>org.bukkit.command.MessageCommandSender</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.command.defaults.PluginsCommand</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.command.defaults.VersionCommand</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.BooleanPrompt</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.Conversable</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.Conversation</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.ConversationAbandonedEvent</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.ConversationAbandonedListener</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.ConversationCanceller</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.ConversationContext</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.ConversationFactory</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.ConversationPrefix</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.ExactMatchConversationCanceller</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.FixedSetPrompt</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.InactivityConversationCanceller</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.ManuallyAbandonedConversationCanceller</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.MessagePrompt</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.NullConversationPrefix</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.NumericPrompt</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.PlayerNamePrompt</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.PluginNameConversationPrefix</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.Prompt</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.RegexPrompt</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.StringPrompt</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.conversations.ValidatingPrompt</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.enchantments.Enchantment</code></td><td><code>getActiveSlots()</code></td></tr>
+<tr><td><code>org.bukkit.enchantments.Enchantment</code></td><td><code>getDamageIncrease(int, org.bukkit.entity.EntityCategory)</code></td></tr>
+<tr><td><code>org.bukkit.enchantments.Enchantment</code></td><td><code>getDamageIncrease(int, org.bukkit.entity.EntityType)</code></td></tr>
+<tr><td><code>org.bukkit.enchantments.Enchantment</code></td><td><code>getItemTarget()</code></td></tr>
+<tr><td><code>org.bukkit.enchantments.Enchantment</code></td><td><code>getName()</code></td></tr>
+<tr><td><code>org.bukkit.enchantments.Enchantment</code></td><td><code>getRarity()</code></td></tr>
+<tr><td><code>org.bukkit.enchantments.Enchantment</code></td><td><code>translationKey()</code></td></tr>
+<tr><td><code>org.bukkit.enchantments.EnchantmentTarget</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.enchantments.EnchantmentWrapper</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.entity.AbstractArrow</code></td><td><code>getItem()</code></td></tr>
+<tr><td><code>org.bukkit.entity.AbstractArrow</code></td><td><code>getKnockbackStrength()</code></td></tr>
+<tr><td><code>org.bukkit.entity.AbstractArrow</code></td><td><code>setItem(org.bukkit.inventory.ItemStack)</code></td></tr>
+<tr><td><code>org.bukkit.entity.AbstractArrow</code></td><td><code>setKnockbackStrength(int)</code></td></tr>
+<tr><td><code>org.bukkit.entity.AbstractArrow</code></td><td><code>setShotFromCrossbow(boolean)</code></td></tr>
+<tr><td><code>org.bukkit.entity.AbstractHorse</code></td><td><code>getVariant()</code></td></tr>
+<tr><td><code>org.bukkit.entity.AbstractHorse</code></td><td><code>isEatingHaystack()</code></td></tr>
+<tr><td><code>org.bukkit.entity.AbstractHorse</code></td><td><code>setEatingHaystack(boolean)</code></td></tr>
+<tr><td><code>org.bukkit.entity.AbstractHorse</code></td><td><code>setVariant(org.bukkit.entity.Horse$Variant)</code></td></tr>
+<tr><td><code>org.bukkit.entity.AbstractSkeleton</code></td><td><code>getSkeletonType()</code></td></tr>
+<tr><td><code>org.bukkit.entity.AbstractSkeleton</code></td><td><code>setSkeletonType(org.bukkit.entity.Skeleton$SkeletonType)</code></td></tr>
+<tr><td><code>org.bukkit.entity.AreaEffectCloud</code></td><td><code>getBasePotionData()</code></td></tr>
+<tr><td><code>org.bukkit.entity.AreaEffectCloud</code></td><td><code>setBasePotionData(org.bukkit.potion.PotionData)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Arrow</code></td><td><code>getBasePotionData()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Arrow</code></td><td><code>setBasePotionData(org.bukkit.potion.PotionData)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Boat</code></td><td><code>getWoodType()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Boat</code></td><td><code>setWoodType(org.bukkit.TreeSpecies)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Cat$Type</code></td><td><code>valueOf(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Cat$Type</code></td><td><code>values()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Enderman</code></td><td><code>getCarriedMaterial()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Enderman</code></td><td><code>setCarriedMaterial(org.bukkit.material.MaterialData)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Endermite</code></td><td><code>isPlayerSpawned()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Endermite</code></td><td><code>setPlayerSpawned(boolean)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Entity</code></td><td><code>setLastDamageCause(org.bukkit.event.entity.EntityDamageEvent)</code></td></tr>
+<tr><td><code>org.bukkit.entity.EntityType</code></td><td><code>fromId(int)</code></td></tr>
+<tr><td><code>org.bukkit.entity.EntityType</code></td><td><code>getTranslationKey()</code></td></tr>
+<tr><td><code>org.bukkit.entity.EntityType</code></td><td><code>getTypeId()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Firework</code></td><td><code>getLife()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Firework</code></td><td><code>getMaxLife()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Firework</code></td><td><code>setLife(int)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Firework</code></td><td><code>setMaxLife(int)</code></td></tr>
+<tr><td><code>org.bukkit.entity.FishHook</code></td><td><code>getBiteChance()</code></td></tr>
+<tr><td><code>org.bukkit.entity.FishHook</code></td><td><code>setBiteChance(double)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Flying</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.entity.Frog$Variant</code></td><td><code>valueOf(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Frog$Variant</code></td><td><code>values()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Horse</code></td><td><code>isCarryingChest()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Horse</code></td><td><code>setCarryingChest(boolean)</code></td></tr>
+<tr><td><code>org.bukkit.entity.HumanEntity</code></td><td><code>setWindowProperty(org.bukkit.inventory.InventoryView$Property, int)</code></td></tr>
+<tr><td><code>org.bukkit.entity.LightningStrike</code></td><td><code>spigot()</code></td></tr>
+<tr><td><code>org.bukkit.entity.LightningStrike$Spigot</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.entity.LivingEntity</code></td><td><code>getCategory()</code></td></tr>
+<tr><td><code>org.bukkit.entity.LivingEntity</code></td><td><code>getItemInUse()</code></td></tr>
+<tr><td><code>org.bukkit.entity.LivingEntity</code></td><td><code>getItemInUseTicks()</code></td></tr>
+<tr><td><code>org.bukkit.entity.LivingEntity</code></td><td><code>getTargetBlock(int)</code></td></tr>
+<tr><td><code>org.bukkit.entity.LivingEntity</code></td><td><code>getTargetBlock(int, com.destroystokyo.paper.block.TargetBlockInfo$FluidMode)</code></td></tr>
+<tr><td><code>org.bukkit.entity.LivingEntity</code></td><td><code>getTargetBlockFace(int, com.destroystokyo.paper.block.TargetBlockInfo$FluidMode)</code></td></tr>
+<tr><td><code>org.bukkit.entity.LivingEntity</code></td><td><code>getTargetBlockInfo(int)</code></td></tr>
+<tr><td><code>org.bukkit.entity.LivingEntity</code></td><td><code>getTargetBlockInfo(int, com.destroystokyo.paper.block.TargetBlockInfo$FluidMode)</code></td></tr>
+<tr><td><code>org.bukkit.entity.LivingEntity</code></td><td><code>getTargetEntityInfo(int)</code></td></tr>
+<tr><td><code>org.bukkit.entity.LivingEntity</code></td><td><code>getTargetEntityInfo(int, boolean)</code></td></tr>
+<tr><td><code>org.bukkit.entity.LivingEntity</code></td><td><code>setItemInUseTicks(int)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Minecart</code></td><td><code>getDisplayBlock()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Minecart</code></td><td><code>setDisplayBlock(org.bukkit.material.MaterialData)</code></td></tr>
+<tr><td><code>org.bukkit.entity.MushroomCow</code></td><td><code>addEffectToNextStew(org.bukkit.potion.PotionEffect, boolean)</code></td></tr>
+<tr><td><code>org.bukkit.entity.MushroomCow</code></td><td><code>getStewEffectDuration()</code></td></tr>
+<tr><td><code>org.bukkit.entity.MushroomCow</code></td><td><code>getStewEffectType()</code></td></tr>
+<tr><td><code>org.bukkit.entity.MushroomCow</code></td><td><code>setStewEffect(org.bukkit.potion.PotionEffectType)</code></td></tr>
+<tr><td><code>org.bukkit.entity.MushroomCow</code></td><td><code>setStewEffectDuration(int)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Ocelot$Type</code></td><td><code>getId()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Ocelot$Type</code></td><td><code>getType(int)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Panda</code></td><td><code>setIsOnBack(boolean)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Panda</code></td><td><code>setIsSitting(boolean)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Player</code></td><td><code>getResourcePackHash()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Projectile</code></td><td><code>doesBounce()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Projectile</code></td><td><code>setBounce(boolean)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Shearable</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.entity.Vex</code></td><td><code>getSummoner()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Vex</code></td><td><code>setSummoner(org.bukkit.entity.Mob)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Villager$Profession</code></td><td><code>valueOf(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Villager$Profession</code></td><td><code>values()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Villager$Type</code></td><td><code>valueOf(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Villager$Type</code></td><td><code>values()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Wither</code></td><td><code>getInvulnerabilityTicks()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Wither</code></td><td><code>setInvulnerabilityTicks(int)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Zombie</code></td><td><code>getVillagerProfession()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Zombie</code></td><td><code>isVillager()</code></td></tr>
+<tr><td><code>org.bukkit.entity.Zombie</code></td><td><code>setVillager(boolean)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Zombie</code></td><td><code>setVillagerProfession(org.bukkit.entity.Villager$Profession)</code></td></tr>
+<tr><td><code>org.bukkit.entity.Zombie</code></td><td><code>supportsBreakingDoors()</code></td></tr>
+<tr><td><code>org.bukkit.entity.minecart.HopperMinecart</code></td><td><code>getPickupCooldown()</code></td></tr>
+<tr><td><code>org.bukkit.entity.minecart.HopperMinecart</code></td><td><code>setPickupCooldown(int)</code></td></tr>
+<tr><td><code>org.bukkit.event.block.BlockBurnEvent</code></td><td><code>&lt;init&gt;(org.bukkit.block.Block)</code></td></tr>
+<tr><td><code>org.bukkit.event.block.BlockCanBuildEvent</code></td><td><code>&lt;init&gt;(org.bukkit.block.Block, org.bukkit.block.data.BlockData, boolean)</code></td></tr>
+<tr><td><code>org.bukkit.event.block.BlockCanBuildEvent</code></td><td><code>&lt;init&gt;(org.bukkit.block.Block, org.bukkit.entity.Player, org.bukkit.block.data.BlockData, boolean)</code></td></tr>
+<tr><td><code>org.bukkit.event.block.BlockCookEvent</code></td><td><code>&lt;init&gt;(org.bukkit.block.Block, org.bukkit.inventory.ItemStack, org.bukkit.inventory.ItemStack)</code></td></tr>
+<tr><td><code>org.bukkit.event.block.BlockDamageEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.block.Block, org.bukkit.inventory.ItemStack, boolean)</code></td></tr>
+<tr><td><code>org.bukkit.event.block.BlockMultiPlaceEvent</code></td><td><code>&lt;init&gt;(java.util.List, org.bukkit.block.Block, org.bukkit.inventory.ItemStack, org.bukkit.entity.Player, boolean)</code></td></tr>
+<tr><td><code>org.bukkit.event.block.BlockPhysicsEvent</code></td><td><code>&lt;init&gt;(org.bukkit.block.Block, org.bukkit.block.data.BlockData, int, int, int)</code></td></tr>
+<tr><td><code>org.bukkit.event.block.BlockPistonExtendEvent</code></td><td><code>&lt;init&gt;(org.bukkit.block.Block, int, org.bukkit.block.BlockFace)</code></td></tr>
+<tr><td><code>org.bukkit.event.block.BlockPlaceEvent</code></td><td><code>&lt;init&gt;(org.bukkit.block.Block, org.bukkit.block.BlockState, org.bukkit.block.Block, org.bukkit.inventory.ItemStack, org.bukkit.entity.Player, boolean)</code></td></tr>
+<tr><td><code>org.bukkit.event.block.BrewingStartEvent</code></td><td><code>getTotalBrewTime()</code></td></tr>
+<tr><td><code>org.bukkit.event.block.BrewingStartEvent</code></td><td><code>setTotalBrewTime(int)</code></td></tr>
+<tr><td><code>org.bukkit.event.block.SignChangeEvent</code></td><td><code>&lt;init&gt;(org.bukkit.block.Block, org.bukkit.entity.Player, java.util.List)</code></td></tr>
+<tr><td><code>org.bukkit.event.block.SignChangeEvent</code></td><td><code>&lt;init&gt;(org.bukkit.block.Block, org.bukkit.entity.Player, java.lang.String[])</code></td></tr>
+<tr><td><code>org.bukkit.event.block.SignChangeEvent</code></td><td><code>&lt;init&gt;(org.bukkit.block.Block, org.bukkit.entity.Player, java.lang.String[], org.bukkit.block.sign.Side)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.CreatureSpawnEvent$SpawnReason</code></td><td><code>CHUNK_GEN:org.bukkit.event.entity.CreatureSpawnEvent$SpawnReason</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityCombustByBlockEvent</code></td><td><code>&lt;init&gt;(org.bukkit.block.Block, org.bukkit.entity.Entity, int)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityCombustByEntityEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Entity, org.bukkit.entity.Entity, int)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityCombustEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Entity, int)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityCombustEvent</code></td><td><code>setDuration(int)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityDamageByBlockEvent</code></td><td><code>&lt;init&gt;(org.bukkit.block.Block, org.bukkit.block.BlockState, org.bukkit.entity.Entity, org.bukkit.event.entity.EntityDamageEvent$DamageCause, org.bukkit.damage.DamageSource, double)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityDamageByBlockEvent</code></td><td><code>&lt;init&gt;(org.bukkit.block.Block, org.bukkit.entity.Entity, org.bukkit.event.entity.EntityDamageEvent$DamageCause, double)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityDamageByBlockEvent</code></td><td><code>&lt;init&gt;(org.bukkit.block.Block, org.bukkit.entity.Entity, org.bukkit.event.entity.EntityDamageEvent$DamageCause, java.util.Map, java.util.Map)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityDamageByEntityEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Entity, org.bukkit.entity.Entity, org.bukkit.event.entity.EntityDamageEvent$DamageCause, double)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityDamageByEntityEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Entity, org.bukkit.entity.Entity, org.bukkit.event.entity.EntityDamageEvent$DamageCause, java.util.Map, java.util.Map)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityDamageByEntityEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Entity, org.bukkit.entity.Entity, org.bukkit.event.entity.EntityDamageEvent$DamageCause, org.bukkit.damage.DamageSource, double)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityDamageByEntityEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Entity, org.bukkit.entity.Entity, org.bukkit.event.entity.EntityDamageEvent$DamageCause, org.bukkit.damage.DamageSource, java.util.Map, java.util.Map)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityDamageEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Entity, org.bukkit.event.entity.EntityDamageEvent$DamageCause, double)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityDamageEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Entity, org.bukkit.event.entity.EntityDamageEvent$DamageCause, java.util.Map, java.util.Map)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityDamageEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Entity, org.bukkit.event.entity.EntityDamageEvent$DamageCause, org.bukkit.damage.DamageSource, double)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityKnockbackByEntityEvent</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityKnockbackEvent</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityPlaceEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Entity, org.bukkit.entity.Player, org.bukkit.block.Block, org.bukkit.block.BlockFace)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityPotionEffectEvent$Cause</code></td><td><code>PATROL_CAPTAIN:org.bukkit.event.entity.EntityPotionEffectEvent$Cause</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityResurrectEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.LivingEntity)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityShootBowEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.LivingEntity, org.bukkit.inventory.ItemStack, org.bukkit.entity.Entity, float)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityShootBowEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.LivingEntity, org.bukkit.inventory.ItemStack, org.bukkit.inventory.ItemStack, org.bukkit.entity.Entity, float)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityTargetEvent$TargetReason</code></td><td><code>PIG_ZOMBIE_TARGET:org.bukkit.event.entity.EntityTargetEvent$TargetReason</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.EntityUnleashEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Entity, org.bukkit.event.entity.EntityUnleashEvent$UnleashReason)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.ExpBottleEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.ThrownExpBottle, int)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.FoodLevelChangeEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.HumanEntity, int)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.ItemSpawnEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Item, org.bukkit.Location)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.LingeringPotionSplashEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.ThrownPotion, org.bukkit.entity.AreaEffectCloud)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.PlayerDeathEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.damage.DamageSource, java.util.List, int, int, int, int, java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.PlayerDeathEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.damage.DamageSource, java.util.List, int, int, int, int, java.lang.String, boolean)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.PlayerDeathEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.damage.DamageSource, java.util.List, int, int, java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.PlayerDeathEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.damage.DamageSource, java.util.List, int, java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.PlayerLeashEntityEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Entity, org.bukkit.entity.Entity, org.bukkit.entity.Player)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.PotionSplashEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.ThrownPotion, java.util.Map)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.ProjectileHitEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Projectile)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.ProjectileHitEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Projectile, org.bukkit.block.Block)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.ProjectileHitEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Projectile, org.bukkit.entity.Entity)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.ProjectileHitEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Projectile, org.bukkit.entity.Entity, org.bukkit.block.Block)</code></td></tr>
+<tr><td><code>org.bukkit.event.entity.SheepDyeWoolEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Sheep, org.bukkit.DyeColor)</code></td></tr>
+<tr><td><code>org.bukkit.event.inventory.FurnaceSmeltEvent</code></td><td><code>&lt;init&gt;(org.bukkit.block.Block, org.bukkit.inventory.ItemStack, org.bukkit.inventory.ItemStack)</code></td></tr>
+<tr><td><code>org.bukkit.event.inventory.FurnaceStartSmeltEvent</code></td><td><code>&lt;init&gt;(org.bukkit.block.Block, org.bukkit.inventory.ItemStack, org.bukkit.inventory.CookingRecipe)</code></td></tr>
+<tr><td><code>org.bukkit.event.inventory.InventoryAction</code></td><td><code>HOTBAR_MOVE_AND_READD:org.bukkit.event.inventory.InventoryAction</code></td></tr>
+<tr><td><code>org.bukkit.event.inventory.InventoryType</code></td><td><code>SMITHING_NEW:org.bukkit.event.inventory.InventoryType</code></td></tr>
+<tr><td><code>org.bukkit.event.player.AsyncPlayerPreLoginEvent</code></td><td><code>&lt;init&gt;(java.lang.String, java.net.InetAddress)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.AsyncPlayerPreLoginEvent</code></td><td><code>&lt;init&gt;(java.lang.String, java.net.InetAddress, java.net.InetAddress, java.util.UUID, boolean, com.destroystokyo.paper.profile.PlayerProfile)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.AsyncPlayerPreLoginEvent</code></td><td><code>&lt;init&gt;(java.lang.String, java.net.InetAddress, java.util.UUID)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.AsyncPlayerPreLoginEvent</code></td><td><code>&lt;init&gt;(java.lang.String, java.net.InetAddress, java.util.UUID, boolean, com.destroystokyo.paper.profile.PlayerProfile)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerAdvancementDoneEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.advancement.Advancement)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerAnimationEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerArmorStandManipulateEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.entity.ArmorStand, org.bukkit.inventory.ItemStack, org.bukkit.inventory.ItemStack, org.bukkit.inventory.EquipmentSlot)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerAttemptPickupItemEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.entity.Item)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerBedLeaveEvent</code></td><td><code>setSpawnLocation(boolean)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerBedLeaveEvent</code></td><td><code>shouldSetSpawnLocation()</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerBucketEmptyEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.block.Block, org.bukkit.block.Block, org.bukkit.block.BlockFace, org.bukkit.Material, org.bukkit.inventory.ItemStack)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerBucketEmptyEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.block.Block, org.bukkit.block.BlockFace, org.bukkit.Material, org.bukkit.inventory.ItemStack)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerBucketEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.block.Block, org.bukkit.block.Block, org.bukkit.block.BlockFace, org.bukkit.Material, org.bukkit.inventory.ItemStack)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerBucketEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.block.Block, org.bukkit.block.BlockFace, org.bukkit.Material, org.bukkit.inventory.ItemStack)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerBucketFillEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.block.Block, org.bukkit.block.Block, org.bukkit.block.BlockFace, org.bukkit.Material, org.bukkit.inventory.ItemStack)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerBucketFillEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.block.Block, org.bukkit.block.BlockFace, org.bukkit.Material, org.bukkit.inventory.ItemStack)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerChangedMainHandEvent</code></td><td><code>getMainHand()</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerCommandPreprocessEvent</code></td><td><code>getRecipients()</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerCommandPreprocessEvent</code></td><td><code>setPlayer(org.bukkit.entity.Player)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerEditBookEvent</code></td><td><code>getSlot()</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerGameModeChangeEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.GameMode)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerHarvestBlockEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.block.Block, java.util.List)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerItemConsumeEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.inventory.ItemStack)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerItemDamageEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.inventory.ItemStack, int)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerItemMendEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.inventory.ItemStack, org.bukkit.entity.ExperienceOrb, int)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerItemMendEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.inventory.ItemStack, org.bukkit.inventory.EquipmentSlot, org.bukkit.entity.ExperienceOrb, int)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerItemMendEvent</code></td><td><code>getDurabilityToXpOperation()</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerItemMendEvent</code></td><td><code>setDurabilityToXpOperation(java.util.function.IntUnaryOperator)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerJoinEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerKickEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, java.lang.String, java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerKickEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, net.kyori.adventure.text.Component, net.kyori.adventure.text.Component)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerLoginEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, java.lang.String, java.net.InetAddress, org.bukkit.event.player.PlayerLoginEvent$Result, java.lang.String, java.net.InetAddress)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerPortalEvent</code></td><td><code>getRelativeTeleportationFlags()</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerPortalEvent</code></td><td><code>willDismountPlayer()</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerPreLoginEvent</code></td><td><code>&lt;init&gt;(java.lang.String, java.net.InetAddress)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerQuitEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerQuitEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, java.lang.String, org.bukkit.event.player.PlayerQuitEvent$QuitReason)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerQuitEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, net.kyori.adventure.text.Component)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerRecipeBookClickEvent</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerResourcePackStatusEvent</code></td><td><code>getHash()</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerRespawnEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.Location, boolean)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerRespawnEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.Location, boolean, boolean)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerRiptideEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.inventory.ItemStack)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerShearEntityEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Player, org.bukkit.entity.Entity)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerSignOpenEvent</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerSpawnChangeEvent</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerTeleportEvent</code></td><td><code>willDismountPlayer()</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerTeleportEvent$TeleportCause</code></td><td><code>CHORUS_FRUIT:org.bukkit.event.player.PlayerTeleportEvent$TeleportCause</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerUnleashEntityEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Entity, org.bukkit.entity.Player)</code></td></tr>
+<tr><td><code>org.bukkit.event.player.PlayerUnleashEntityEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Entity, org.bukkit.entity.Player, org.bukkit.inventory.EquipmentSlot)</code></td></tr>
+<tr><td><code>org.bukkit.event.server.BroadcastMessageEvent</code></td><td><code>&lt;init&gt;(java.lang.String, java.util.Set)</code></td></tr>
+<tr><td><code>org.bukkit.event.server.BroadcastMessageEvent</code></td><td><code>&lt;init&gt;(net.kyori.adventure.text.Component, java.util.Set)</code></td></tr>
+<tr><td><code>org.bukkit.event.server.BroadcastMessageEvent</code></td><td><code>&lt;init&gt;(boolean, java.lang.String, java.util.Set)</code></td></tr>
+<tr><td><code>org.bukkit.event.server.ServerListPingEvent</code></td><td><code>&lt;init&gt;(java.lang.String, java.net.SocketAddress, java.lang.String, int)</code></td></tr>
+<tr><td><code>org.bukkit.event.server.ServerListPingEvent</code></td><td><code>&lt;init&gt;(java.lang.String, java.net.SocketAddress, java.lang.String, int, int)</code></td></tr>
+<tr><td><code>org.bukkit.event.server.ServerListPingEvent</code></td><td><code>&lt;init&gt;(java.net.InetAddress, net.kyori.adventure.text.Component, int)</code></td></tr>
+<tr><td><code>org.bukkit.event.server.ServerListPingEvent</code></td><td><code>&lt;init&gt;(java.net.InetAddress, net.kyori.adventure.text.Component, int, int)</code></td></tr>
+<tr><td><code>org.bukkit.event.server.ServerListPingEvent</code></td><td><code>iterator()</code></td></tr>
+<tr><td><code>org.bukkit.event.server.ServerListPingEvent</code></td><td><code>shouldSendChatPreviews()</code></td></tr>
+<tr><td><code>org.bukkit.event.vehicle.VehicleBlockCollisionEvent</code></td><td><code>&lt;init&gt;(org.bukkit.entity.Vehicle, org.bukkit.block.Block)</code></td></tr>
+<tr><td><code>org.bukkit.event.vehicle.VehicleEntityCollisionEvent</code></td><td><code>isCollisionCancelled()</code></td></tr>
+<tr><td><code>org.bukkit.event.vehicle.VehicleEntityCollisionEvent</code></td><td><code>isPickupCancelled()</code></td></tr>
+<tr><td><code>org.bukkit.event.vehicle.VehicleEntityCollisionEvent</code></td><td><code>setCollisionCancelled(boolean)</code></td></tr>
+<tr><td><code>org.bukkit.event.vehicle.VehicleEntityCollisionEvent</code></td><td><code>setPickupCancelled(boolean)</code></td></tr>
+<tr><td><code>org.bukkit.event.weather.LightningStrikeEvent</code></td><td><code>&lt;init&gt;(org.bukkit.World, org.bukkit.entity.LightningStrike)</code></td></tr>
+<tr><td><code>org.bukkit.event.weather.ThunderChangeEvent</code></td><td><code>&lt;init&gt;(org.bukkit.World, boolean)</code></td></tr>
+<tr><td><code>org.bukkit.event.weather.WeatherChangeEvent</code></td><td><code>&lt;init&gt;(org.bukkit.World, boolean)</code></td></tr>
+<tr><td><code>org.bukkit.event.world.PortalCreateEvent</code></td><td><code>&lt;init&gt;(java.util.List, org.bukkit.World, org.bukkit.event.world.PortalCreateEvent$CreateReason)</code></td></tr>
+<tr><td><code>org.bukkit.generator.BiomeParameterPoint</code></td><td><code>getMaxContinentalness()</code></td></tr>
+<tr><td><code>org.bukkit.generator.BiomeParameterPoint</code></td><td><code>getMaxDepth()</code></td></tr>
+<tr><td><code>org.bukkit.generator.BiomeParameterPoint</code></td><td><code>getMaxErosion()</code></td></tr>
+<tr><td><code>org.bukkit.generator.BiomeParameterPoint</code></td><td><code>getMaxHumidity()</code></td></tr>
+<tr><td><code>org.bukkit.generator.BiomeParameterPoint</code></td><td><code>getMaxTemperature()</code></td></tr>
+<tr><td><code>org.bukkit.generator.BiomeParameterPoint</code></td><td><code>getMaxWeirdness()</code></td></tr>
+<tr><td><code>org.bukkit.generator.BiomeParameterPoint</code></td><td><code>getMinContinentalness()</code></td></tr>
+<tr><td><code>org.bukkit.generator.BiomeParameterPoint</code></td><td><code>getMinDepth()</code></td></tr>
+<tr><td><code>org.bukkit.generator.BiomeParameterPoint</code></td><td><code>getMinErosion()</code></td></tr>
+<tr><td><code>org.bukkit.generator.BiomeParameterPoint</code></td><td><code>getMinHumidity()</code></td></tr>
+<tr><td><code>org.bukkit.generator.BiomeParameterPoint</code></td><td><code>getMinTemperature()</code></td></tr>
+<tr><td><code>org.bukkit.generator.BiomeParameterPoint</code></td><td><code>getMinWeirdness()</code></td></tr>
+<tr><td><code>org.bukkit.generator.structure.Structure</code></td><td><code>getKey()</code></td></tr>
+<tr><td><code>org.bukkit.generator.structure.Structure</code></td><td><code>key()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.AnvilInventory</code></td><td><code>getMaximumRepairCost()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.AnvilInventory</code></td><td><code>getRenameText()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.AnvilInventory</code></td><td><code>getRepairCost()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.AnvilInventory</code></td><td><code>getRepairCostAmount()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.AnvilInventory</code></td><td><code>setMaximumRepairCost(int)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.AnvilInventory</code></td><td><code>setRepairCost(int)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.AnvilInventory</code></td><td><code>setRepairCostAmount(int)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.FurnaceRecipe</code></td><td><code>&lt;init&gt;(org.bukkit.NamespacedKey, org.bukkit.inventory.ItemStack, org.bukkit.Material, int, float, int)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.FurnaceRecipe</code></td><td><code>&lt;init&gt;(org.bukkit.inventory.ItemStack, org.bukkit.Material)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.FurnaceRecipe</code></td><td><code>&lt;init&gt;(org.bukkit.inventory.ItemStack, org.bukkit.Material, int)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.FurnaceRecipe</code></td><td><code>&lt;init&gt;(org.bukkit.inventory.ItemStack, org.bukkit.material.MaterialData)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.FurnaceRecipe</code></td><td><code>&lt;init&gt;(org.bukkit.inventory.ItemStack, org.bukkit.material.MaterialData, float)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.FurnaceRecipe</code></td><td><code>setInput(org.bukkit.Material, int)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.FurnaceRecipe</code></td><td><code>setInput(org.bukkit.material.MaterialData)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.InventoryView$Property</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.inventory.ItemFactory</code></td><td><code>getI18NDisplayName(org.bukkit.inventory.ItemStack)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.ItemStack</code></td><td><code>&lt;init&gt;(org.bukkit.Material, int, short, java.lang.Byte)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.ItemStack</code></td><td><code>getData()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.ItemStack</code></td><td><code>getMaxItemUseDuration()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.ItemStack</code></td><td><code>getRarity()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.ItemStack</code></td><td><code>getTranslationKey()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.ItemStack</code></td><td><code>setData(org.bukkit.material.MaterialData)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.ItemType</code></td><td><code>getCreativeCategory()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.ItemType</code></td><td><code>getTranslationKey()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.ItemType</code></td><td><code>isEnabledByFeature(org.bukkit.World)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.RecipeChoice$ExactChoice</code></td><td><code>&lt;init&gt;(java.util.List)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.RecipeChoice$ExactChoice</code></td><td><code>&lt;init&gt;(org.bukkit.inventory.ItemStack)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.RecipeChoice$ExactChoice</code></td><td><code>&lt;init&gt;(org.bukkit.inventory.ItemStack[])</code></td></tr>
+<tr><td><code>org.bukkit.inventory.SmithingTrimRecipe</code></td><td><code>&lt;init&gt;(org.bukkit.NamespacedKey, org.bukkit.inventory.RecipeChoice, org.bukkit.inventory.RecipeChoice, org.bukkit.inventory.RecipeChoice)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.SmithingTrimRecipe</code></td><td><code>&lt;init&gt;(org.bukkit.NamespacedKey, org.bukkit.inventory.RecipeChoice, org.bukkit.inventory.RecipeChoice, org.bukkit.inventory.RecipeChoice, boolean)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.ItemMeta</code></td><td><code>getCanDestroy()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.ItemMeta</code></td><td><code>getCanPlaceOn()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.ItemMeta</code></td><td><code>getDestroyableKeys()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.ItemMeta</code></td><td><code>getLocalizedName()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.ItemMeta</code></td><td><code>getPlaceableKeys()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.ItemMeta</code></td><td><code>hasDestroyableKeys()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.ItemMeta</code></td><td><code>hasLocalizedName()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.ItemMeta</code></td><td><code>hasPlaceableKeys()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.ItemMeta</code></td><td><code>setCanDestroy(java.util.Set)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.ItemMeta</code></td><td><code>setCanPlaceOn(java.util.Set)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.ItemMeta</code></td><td><code>setDestroyableKeys(java.util.Collection)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.ItemMeta</code></td><td><code>setLocalizedName(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.ItemMeta</code></td><td><code>setPlaceableKeys(java.util.Collection)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.PotionMeta</code></td><td><code>getBasePotionData()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.PotionMeta</code></td><td><code>getCustomName()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.PotionMeta</code></td><td><code>hasCustomName()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.PotionMeta</code></td><td><code>setBasePotionData(org.bukkit.potion.PotionData)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.PotionMeta</code></td><td><code>setCustomName(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.SpawnEggMeta</code></td><td><code>getSpawnedType()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.SpawnEggMeta</code></td><td><code>setSpawnedType(org.bukkit.entity.EntityType)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.TropicalFishBucketMeta</code></td><td><code>hasVariant()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.components.JukeboxPlayableComponent</code></td><td><code>isShowInTooltip()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.components.JukeboxPlayableComponent</code></td><td><code>setShowInTooltip(boolean)</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.tags.CustomItemTagContainer</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.tags.ItemTagAdapterContext</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.tags.ItemTagType</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.trim.TrimMaterial</code></td><td><code>getKey()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.trim.TrimMaterial</code></td><td><code>getTranslationKey()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.trim.TrimMaterial</code></td><td><code>key()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.trim.TrimPattern</code></td><td><code>getKey()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.trim.TrimPattern</code></td><td><code>getTranslationKey()</code></td></tr>
+<tr><td><code>org.bukkit.inventory.meta.trim.TrimPattern</code></td><td><code>key()</code></td></tr>
+<tr><td><code>org.bukkit.loot.LootContext</code></td><td><code>getLootingModifier()</code></td></tr>
+<tr><td><code>org.bukkit.loot.LootContext$Builder</code></td><td><code>lootingModifier(int)</code></td></tr>
+<tr><td><code>org.bukkit.map.MapCanvas</code></td><td><code>getBasePixel(int, int)</code></td></tr>
+<tr><td><code>org.bukkit.map.MapCanvas</code></td><td><code>getPixel(int, int)</code></td></tr>
+<tr><td><code>org.bukkit.map.MapCursor</code></td><td><code>setRawType(byte)</code></td></tr>
+<tr><td><code>org.bukkit.map.MapCursor$Type</code></td><td><code>valueOf(java.lang.String)</code></td></tr>
+<tr><td><code>org.bukkit.map.MapCursor$Type</code></td><td><code>values()</code></td></tr>
+<tr><td><code>org.bukkit.map.MapPalette</code></td><td><code>getColor(byte)</code></td></tr>
+<tr><td><code>org.bukkit.map.MapPalette</code></td><td><code>imageToBytes(java.awt.Image)</code></td></tr>
+<tr><td><code>org.bukkit.map.MapPalette</code></td><td><code>matchColor(int, int, int)</code></td></tr>
+<tr><td><code>org.bukkit.map.MapPalette</code></td><td><code>matchColor(java.awt.Color)</code></td></tr>
+<tr><td><code>org.bukkit.material.Banner</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Bed</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Button</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Cake</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Cauldron</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Chest</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Coal</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.CocoaPlant</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Command</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Comparator</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Crops</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.DetectorRail</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Diode</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.DirectionalContainer</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Dispenser</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Door</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Dye</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.EnderChest</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.ExtendedRails</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.FlowerPot</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Furnace</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.FurnaceAndDispenser</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Gate</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Hopper</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Ladder</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Leaves</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Lever</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.LongGrass</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.MaterialData</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.MonsterEggs</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Mushroom</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.NetherWarts</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Observer</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Openable</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.PistonBaseMaterial</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.PistonExtensionMaterial</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.PoweredRail</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.PressurePlate</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.PressureSensor</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Pumpkin</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Rails</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Redstone</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.RedstoneTorch</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.RedstoneWire</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Sandstone</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Sapling</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Sign</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.SimpleAttachableMaterialData</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Skull</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.SmoothBrick</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.SpawnEgg</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Stairs</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Step</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.TexturedMaterial</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Torch</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.TrapDoor</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Tree</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Tripwire</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.TripwireHook</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Vine</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Wood</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.WoodenStep</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.Wool</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.material.types.MushroomBlockTexture</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.plugin.Plugin</code></td><td><code>getPluginLoader()</code></td></tr>
+<tr><td><code>org.bukkit.plugin.PluginAwareness$Flags</code></td><td><code>UTF8:org.bukkit.plugin.PluginAwareness$Flags</code></td></tr>
+<tr><td><code>org.bukkit.plugin.PluginDescriptionFile</code></td><td><code>getClassLoaderOf()</code></td></tr>
+<tr><td><code>org.bukkit.plugin.PluginLoader</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.plugin.PluginManager</code></td><td><code>registerInterface(java.lang.Class)</code></td></tr>
+<tr><td><code>org.bukkit.plugin.SimplePluginManager</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.plugin.TimedRegisteredListener</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.plugin.java.JavaPlugin</code></td><td><code>&lt;init&gt;(org.bukkit.plugin.java.JavaPluginLoader, org.bukkit.plugin.PluginDescriptionFile, java.io.File, java.io.File)</code></td></tr>
+<tr><td><code>org.bukkit.plugin.java.JavaPlugin</code></td><td><code>getPluginLoader()</code></td></tr>
+<tr><td><code>org.bukkit.plugin.java.JavaPluginLoader</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.potion.PotionBrewer</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.potion.PotionData</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.potion.PotionEffectType</code></td><td><code>getDurationModifier()</code></td></tr>
+<tr><td><code>org.bukkit.potion.PotionEffectType</code></td><td><code>getId()</code></td></tr>
+<tr><td><code>org.bukkit.potion.PotionEffectTypeCategory</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.potion.PotionEffectTypeWrapper</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.potion.PotionType$InternalPotionData</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.scoreboard.Criterias</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.tag.DamageTypeTags</code></td><td><code>IS_MACE_SMASH:org.bukkit.Tag</code></td></tr>
+<tr><td><code>org.bukkit.util.Consumer</code></td><td><code>class marked for removal</code></td></tr>
+<tr><td><code>org.bukkit.util.OldEnum</code></td><td><code>class marked for removal</code></td></tr>
+</tbody></table></details>
+
+<footer>Generated by Refit from the published Paper API jars. Not affiliated with Mojang, Microsoft or PaperMC.</footer>
+</main>
+</body>
+</html>
